@@ -1,0 +1,25 @@
+server:
+  port: 8989
+  servlet-jsp:
+    init-parameters:
+      development: true  #修改jsp运行方式为调试模式  在调试模式下修改保存立即生效
+spring:
+  mvc:
+    view: #前缀和后缀
+      prefix: /
+      suffix: .jsp
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.230.136:9300
+
+  datasource: #数据源
+    url: jdbc:mysql://localhost:3306/homework
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis:
+  mapper-locations: classpath:com/baizhi/dao/*.xml
+  type-aliases-package: com.baizhi.entity #别名设置 默认类名 类名首字母小写
